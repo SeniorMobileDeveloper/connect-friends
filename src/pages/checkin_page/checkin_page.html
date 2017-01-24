@@ -1,0 +1,76 @@
+<!--
+<ion-header>
+	<ion-navbar>
+		<button menuToggle>
+			<ion-icon name="menu"></ion-icon>
+		</button>
+		<ion-title>Checkin View</ion-title>
+	</ion-navbar>
+</ion-header>
+-->
+
+<ion-content padding class="cus-blue-bg">
+
+	<div class="logo-wrapper padding-10">
+		<img class="logo" src="assets/img/logo.png"/>
+	</div>
+	<div class="margin-minus-5">
+		<ion-grid >
+            <!-- <ion-row>
+                <div white class="h5 sub-title cus-white align-center">Check in</div>
+            </ion-row> -->
+            <ion-row center>
+                <ion-col width-75>
+                    <input color="white" type="text" value="" [(ngModel)]="address" class="h5 cus-white inline-input google-place-input" placeholder="Enter address" (setAddress) = "getAddress($event)" googleplace />
+                </ion-col>
+                <ion-col width-25>
+                    <button ion-button outline color="white" class="inline-btn" (click)="checkIn()">Check In</button>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+	</div>
+	<div class="margin-top-20">
+		<ion-grid>
+            <ion-row>
+                <div white class="h5 sub-title cus-white align-center">Users at this location</div>
+            </ion-row>
+        </ion-grid>
+        <ion-content class="users-content">
+			<ion-list class="user-item">
+				<ion-item *ngFor="let user of nearByUsers" (click)="selectUser(user)">
+					<ion-avatar item-left>
+						<img src="{{images_path + user.photo}}" class="list-avatar">
+					</ion-avatar>
+					<h2>{{user.username}}</h2>
+				</ion-item>
+			</ion-list>
+		</ion-content>
+	</div>
+	<div class="margin-minus-5">
+		<ion-grid >
+            <ion-row>
+                <button ion-button outline color="white" class="width-100" (click)="createGroup()">Create Group</button>
+            </ion-row>
+            <ion-row>
+                <div white margin class="h5 sub-title cus-white align-center">Your Group</div>
+            </ion-row>
+            <ion-row>
+                <ion-col width-25 *ngFor="let user of groupMembers">
+                    <img src="{{user.photo}}" class="member-avatar" />
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+	</div>
+	<div class="margin-minus-5">
+		<ion-grid >
+            <ion-row>
+                <ion-col width-50>
+                    <button ion-button outline color="white" class="width-100" (click)="oldFriend()">Old Friends</button>
+                </ion-col>
+                <ion-col width-50>
+                    <button ion-button outline color="white" class="width-100" (click)="newFriend()">New Friends</button>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+	</div>
+</ion-content>

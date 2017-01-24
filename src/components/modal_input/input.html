@@ -1,0 +1,22 @@
+<ion-card class='custom-card'>
+    <ion-card-header>
+        Please input {{label}}.
+    </ion-card-header>
+    <ion-card-content>
+        <ion-grid>
+            <ion-row>
+                <ion-col width-100>
+                    <ion-input type="text" [(ngModel)]="value" class="h5 input-black" required></ion-input>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col width-50>
+                    <button ion-button color="blue" class="width-100" (click)="accept()">Accept</button>
+                </ion-col>
+                <ion-col width-50>
+                    <button ion-button outline color="blue" class="width-100" (click)="dismiss()">Cancel</button>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-card-content>
+</ion-card>

@@ -1,0 +1,46 @@
+<!--
+<ion-header>
+  <ion-navbar>
+    <button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Navigation page</ion-title>
+  </ion-navbar>
+</ion-header>
+-->
+
+<ion-content padding class="cus-blue-bg">
+
+    <div #map id="map"></div>  
+
+    <div class="margin-minus-5 padding-top-20">
+        <ion-grid class="margin-minus-5">
+            <ion-row >
+                <ion-col width-50>
+                    <button ion-button outline color="white" class="width-100">Request Ride</button>
+                </ion-col>
+                <ion-col width-50>
+                    <button ion-button outline color="white" class="width-100" *ngIf="isGroupLeader" (click)="suggestNewLocation()">Suggest new location</button>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col width-50>
+                    <button ion-button outline color="white" class="width-100">Message</button>
+                    <button ion-button outline color="white" class="width-100" *ngIf="isGroupLeader" (click)="agree()">Agree</button>
+                    <button ion-button outline color="white" class="width-100" *ngIf="isGroupLeader" (click)="back()">Cancel</button>
+                </ion-col>
+                <ion-col width-50>
+                    <div class="suggest-group">
+                        <div class="match-group-member" *ngFor="let user of suggests">
+                            <img src="{{images_path + user.photo}}" class="group-member">
+                        </div>
+                    </div>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <button ion-button outline color="white" class="width-100" (click)="goToProfile()">Become friends</button>
+            </ion-row>
+        </ion-grid>
+    </div>
+
+</ion-content>

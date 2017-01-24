@@ -1,0 +1,34 @@
+<!--
+<ion-header>
+  <ion-navbar>
+    <button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Swipe Main View</ion-title>
+  </ion-navbar>
+</ion-header>
+-->
+
+<ion-content padding class="start-page cus-blue-bg">
+
+    <div swing-stack #myswing1 [stackConfig]="stackConfig" (throwoutleft)="voteUp(false)" (throwoutright)="voteUp(true)" id="card-stack">
+        <ion-card #mycards1 swing-card *ngFor="let group of groups">
+            <div *ngFor="let member of group.members" class="match-group-member">
+                <img src="{{images_path + member.user.photo}}" class="group-member">
+            </div>
+        </ion-card>
+    </div>
+    <div class="match-button-wrapper">
+        <button ion-button class="not-match-button" (click)="voteUp(false)">Dislike</button>
+        <!-- <button ion-button class="match-button" (click)="voteUp(true)">Like</button> -->
+        <button ion-button class="match-button" (click)="goToNavigation()">Like</button>
+    </div>
+    <div class="accepted-button-wrapper">
+        <button ion-button class="accepted-button" *ngIf="isAcceptBtnVisible" (click)="accepted()">Accept</button>
+        <button ion-button class="return-button" (click)="reverse()">Return</button>
+    </div>
+    <div style="float: right;">
+        <button ion-button class="go-back-button" (click)="goBack()">Back</button>
+    </div>
+
+</ion-content>

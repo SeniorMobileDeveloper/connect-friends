@@ -1,0 +1,191 @@
+// Ionic Variables and Theming. For more info, please see:
+// http://ionicframework.com/docs/v2/theming/
+@import "ionic.globals";
+
+
+// Shared Variables
+// --------------------------------------------------
+// To customize the look and feel of this app, you can override
+// the Sass variables found in Ionic's source scss files.
+// To view all the possible Ionic variables, see:
+// http://ionicframework.com/docs/v2/theming/overriding-ionic-variables/
+
+$text-color:        #000;
+$background-color:  transparent;
+
+
+// Named Color Variables
+// --------------------------------------------------
+// Named colors makes it easy to reuse colors on various components.
+// It's highly recommended to change the default colors
+// to match your app's branding. Ionic uses a Sass map of
+// colors so you can add, rename and remove colors as needed.
+// The "primary" color is the only required color in the map.
+
+$colors: (
+  primary:    #387ef5,
+  secondary:  #32db64,
+  danger:     #f53d3d,
+  light:      #f4f4f4,
+  dark:       #222,
+  favorite:   #69BB7B,
+  white:      #FFFFFF,
+);
+
+.cus-white { color: white ;}
+.cus-blue-bg { background-color: #5e90e4 !important;}
+
+/* --------Common Style---------------------*/
+.width-100 {
+	width: 100%;
+}
+
+/*--------- Position Style ------------------*/
+.padding-50 { padding: 50px; }
+.padding-30 { padding: 30px; }
+.padding-20 { padding: 20px; }
+.padding-top-20 { padding-top: 20px;}
+.padding-top-30 { padding-top: 30px;}
+.padding-bottom-10 { padding-bottom: 10px;}
+.padding-bottom-20 { padding-bottom: 20px;}
+.padding-10 { padding: 10px; }
+.padding-5  { padding: 5px;  }
+
+.margin-minus-5 { margin: -5px;}
+
+.margin-top-20 { margin: 20px;}
+.align-center { text-align: center; width: 100%;}
+
+/*--------- Font Style -----------------------*/
+
+.underline { text-decoration: underline; }
+.h5 { font-size: 1.6rem; }
+
+.h3 { font-size: 2.0rem; }
+
+/*--------- Component Style -----------------*/
+.avatar-large {
+
+	img {
+		border-radius: 8rem;
+	    width: 12rem;
+	    height: 12rem;
+	    border: solid white 1px;
+	}
+}
+
+/*--------- App Shared Component ------------*/
+ion-content {
+	scroll-content {
+
+		.logo-wrapper {
+			text-align: center;
+
+			.logo {
+				width: 90px;
+				height: 90px;
+			}
+		}
+
+		.button {
+			text-transform: capitalize;
+		}
+
+		ion-row {		
+			
+
+			.sub-title {
+				height: 100%;
+				line-height: 5.5rem;
+				padding: 0;
+			}
+
+			ion-col {
+				height: 100%; 
+				width: 100%;
+
+				ion-input {
+					border-bottom: solid 1px white;
+					height: 100%;
+
+					.text-input {
+						margin: 0 .8rem;
+						line-height: 4.4rem;
+						height: 100%
+					}
+				}
+
+				.item-select {
+					background: transparent none repeat scroll 0% 0%;
+					padding: 0px;
+					height: 4.4rem;
+					margin-top: -0.6rem;
+
+					.select-label {
+						display: none; 
+					}
+
+					ion-select {
+						padding: 16px 8px 10px;
+						width: 100%;
+						color: white;
+						max-width: 100%;
+
+						.select-icon {
+							display: none;
+						}
+					}
+				}
+
+				.item-range {
+					background: transparent none repeat scroll 0% 0%;
+					height: 4.4rem;
+					padding: 0px;
+					color: white;
+					margin-top: -0.5rem;
+				}
+			}
+
+		}
+	}
+}
+
+.users-content {
+	height: 28rem;
+	background: transparent;
+
+	scroll-content {
+		margin-top: 0;
+		padding: 0;
+	}
+
+	ion-list {
+		.item {
+			background: transparent none repeat scroll 0% 0%;
+			color: white;
+			border: none !important;
+
+			.item-inner {
+				border: none;
+			}
+		}
+	}
+}
+
+// App Theme
+// --------------------------------------------------
+// Ionic apps can have different themes applied, which can
+// then be future customized. This import comes last
+// so that the above variables are used and Ionic's
+// default are overridden.
+
+@import "ionic.theme.default";
+
+
+// Ionicons
+// --------------------------------------------------
+// The premium icon font for Ionic. For more info, please see:
+// http://ionicframework.com/docs/v2/ionicons/
+
+$ionicons-font-path: "../assets/fonts";
+@import "ionicons";

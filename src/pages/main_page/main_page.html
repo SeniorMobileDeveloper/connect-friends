@@ -1,0 +1,58 @@
+<!-- <ion-tabs [selectedIndex]="mySelectedIndex">
+  <ion-tab [root]="tab1Root" tabTitle="Schedule" tabIcon="calendar"></ion-tab>
+  <ion-tab [root]="tab2Root" tabTitle="Speakers" tabIcon="contacts"></ion-tab>
+  <ion-tab [root]="tab3Root" tabTitle="Map" tabIcon="map"></ion-tab>
+  <ion-tab [root]="tab4Root" tabTitle="About" tabIcon="information-circle"></ion-tab>
+</ion-tabs>
+ -->
+
+ <ion-content padding class="cus-blue-bg">
+
+    <div class="margin-minus-5">
+        <ion-grid >
+            <ion-row>
+                <ion-col width-50>
+                    <div class="align-center h5 cus-white padding-5">Fredrick Wubbe</div>
+                    <div class="align-center h5 cus-white padding-5">70%</div>
+                    <div class="avatar-large align-center">
+                        <img src="{{profile_img_url}}">
+                    </div>
+                    <div class="align-center h5 cus-white padding-5">66</div>
+                </ion-col>
+                <ion-col class="logo-wrapper padding-30">
+                    <img class="logo" src="assets/img/logo.png" (click)="presentUsernamePage()" />
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </div>
+	<div class="margin-minus-5">
+		<ion-grid >
+            <ion-row>
+                <button ion-button clear color="white" class="h5 underline" (click)="getFriendList()">Friends list</button>
+            </ion-row>
+            <ion-row>
+                <ion-col>
+                    <button ion-button clear color="white" class="h5 underline" (click)="gotoCheckinPage()">Check in</button>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+	</div>
+    <div class="margin-minus-5">
+        <ion-grid >
+            <ion-row>
+                <div white class="h5 sub-title cus-white align-center">Active Friends</div>
+            </ion-row>
+        </ion-grid>
+        <ion-content class="users-content">
+            <ion-list>
+                <ion-item *ngFor="let item of items">
+                    <ion-avatar item-left>
+                        <img src="{{item.img_url}}">
+                    </ion-avatar>
+                    <h2>{{item.username}}</h2>
+                </ion-item>
+            </ion-list>
+        </ion-content>
+    </div>
+
+</ion-content>

@@ -1,0 +1,26 @@
+.scroll {
+    height: 100%;
+}
+ 
+#map {
+    width: 100%;
+    height: 45%;
+}
+
+.suggest-group {
+	width: 43vw;
+    height: 43vw;
+    text-align: center;
+    border: solid 1px white;
+    padding: 2%;
+
+	.img-wrapper {
+		width: 50%;
+		border: 1px solid white;
+		
+		img {
+			width: 100%;
+			height: 100%;	
+		}
+	}
+}

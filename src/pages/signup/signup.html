@@ -1,0 +1,184 @@
+<!-- <ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Signup</ion-title>
+  </ion-navbar>
+</ion-header> -->
+
+<!-- <ion-content class="login-page">
+
+  <ion-list>
+    <form #signupForm="ngForm" novalidate>
+      <ion-item>
+        <ion-label floating color="primary">Username</ion-label>
+        <ion-input [(ngModel)]="signup.username" name="username" type="text" #username="ngModel" required>
+        </ion-input>
+      </ion-item>
+      <p [hidden]="username.valid || submitted == false" color="danger" padding-left>
+        Username is required
+      </p>
+
+      <ion-item>
+        <ion-label floating color="primary">Password</ion-label>
+        <ion-input [(ngModel)]="signup.password" name="password" type="password" #password="ngModel" required>
+        </ion-input>
+      </ion-item>
+      <p [hidden]="password.valid || submitted == false" color="danger" padding-left>
+        Password is required
+      </p>
+
+      <div padding>
+        <button ion-button (click)="onSignup(signupForm)" type="submit" block color="primary">Create</button>
+      </div>
+    </form>
+  </ion-list>
+
+</ion-content> -->
+
+<ion-content padding class="login_page cus-blue-bg">
+
+    <div class="logo-wrapper padding-10">
+        <img class="logo" src="assets/img/logo.png"/>
+    </div>
+    <div class="component-wrapper1 margin-minus-5">
+        <ion-grid>
+            <ion-row>
+                <div class="h5 sub-title cus-white align-center">Registration</div>
+            </ion-row>
+            <ion-row center>
+                <ion-col width-33 class="h5 sub-title cus-white">
+                    Username
+                </ion-col>
+                <ion-col>
+                    <ion-input type="text" [(ngModel)]="signup.username" class="h5 cus-white" required></ion-input>
+                </ion-col>
+            </ion-row>
+            <ion-row center>
+                <ion-col width-33 class="h5 sub-title cus-white">
+                    Email
+                </ion-col>
+                <ion-col>
+                    <ion-input type="email" [(ngModel)]="signup.email" class="h5 cus-white" required></ion-input>
+                </ion-col>
+            </ion-row>
+            <ion-row center>
+                <ion-col width-33 class="h5 sub-title cus-white">
+                    Password
+                </ion-col>
+                <ion-col>
+                    <ion-input type="password" [(ngModel)]="signup.password" class="h5 cus-white" required></ion-input>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </div>
+    <div class="component-wrapper2 margin-minus-5">
+        <ion-grid>
+            <ion-row>
+                <div class="h5 sub-title cus-white align-center">Create Profile</div>
+            </ion-row>
+            <ion-row center>
+                <ion-col width-33 class="h5 sub-title cus-white">
+                    Age
+                </ion-col>
+                <ion-col>
+                    <ion-input type="number" [(ngModel)]="signup.age" max="100" min="0" class="h5 cus-white"></ion-input>
+                </ion-col>
+            </ion-row>
+            <ion-row center>
+                <ion-col width-33 class="h5 sub-title cus-white">
+                    Gender
+                </ion-col>
+                <ion-col>
+                    <ion-item>
+                        <ion-label class="select-label">Gender</ion-label>
+                        <ion-select [(ngModel)]="signup.gender" class="cus-white">
+                            <ion-option value="female" >Female</ion-option>
+                            <ion-option value="male" selected="true">Male</ion-option>
+                        </ion-select>
+                    </ion-item>
+                </ion-col>
+            </ion-row>
+            <ion-row center>
+                <ion-col width-33 class="h5 sub-title cus-white">
+                    Orientation
+                </ion-col>
+                <ion-col>
+                    <ion-item>
+                        <ion-label class="select-label">Orientation</ion-label>
+                        <ion-select [(ngModel)]="signup.orientation" class="cus-white">
+                            <ion-option value="straight" selected="true">Straight</ion-option>
+                            <ion-option value="gay" >Gay</ion-option>
+                            <ion-option value="bisexual" >Bisexual</ion-option>
+                        </ion-select>
+                    </ion-item>
+                </ion-col>
+            </ion-row>
+            <ion-row center>
+                <ion-col width-33 class="h5 sub-title cus-white">
+                    Distance
+                </ion-col>
+                <ion-col>
+                    <ion-item>
+                        <ion-range min="0" max="5" step="1" [(ngModel)]="signup.distance" class="cus-white">
+                            <ion-label range-left>0</ion-label>
+                            <ion-label range-right>5</ion-label>
+                        </ion-range>
+                    </ion-item>
+                </ion-col>
+            </ion-row>
+            <!-- <ion-row>
+                <ion-col width-33 class="h5 sub-title cus-white">
+                    Upload Photos
+                </ion-col>
+                <ion-col>
+                    <ion-input white type="text" value="" class="h5 cus-white"></ion-input>
+                </ion-col>
+            </ion-row> -->
+            <ion-row center>
+                <ion-col width-33 class="h5 sub-title cus-white">
+                    Description
+                </ion-col>
+                <ion-col>
+                    <ion-input white type="text" [(ngModel)]="signup.description" class="h5 cus-white"></ion-input>
+                </ion-col>
+            </ion-row>
+            <ion-row center>
+                <ion-col width-33 class="h5 sub-title cus-white">
+                    Looking for
+                </ion-col>
+                <ion-col width-67>
+                    <ion-item>
+                        <ion-label class="select-label">What are you looking for</ion-label>
+                        <ion-select [(ngModel)]="signup.aim" class="cus-white">
+                            <ion-option value="dating" selected="true">Dating</ion-option>
+                            <ion-option value="friend" >Meeting new friends</ion-option>
+                            <ion-option value="konect" >Stayin konected</ion-option>
+                        </ion-select>
+                    </ion-item>
+                </ion-col>
+            </ion-row>
+            <ion-row center>
+                <ion-col width-50 class="h5 sub-title cus-white">
+                    Single/Relationship
+                </ion-col>
+                <ion-col width-50>
+                    <ion-item>
+                        <ion-label class="select-label">Single/Relationship</ion-label>
+                        <ion-select [(ngModel)]="signup.marrage" class="cus-white">
+                            <ion-option value="0" selected="true">Single</ion-option>
+                            <ion-option value="1" >Taken</ion-option>
+                        </ion-select>
+                    </ion-item>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </div>
+    <p *ngIf="errorResponse" danger>{{errorResponse}}</p>
+    <div class="component-wrapper3 margin-minus-5 align-center padding-20">
+        <button ion-button outline color="white" (click)="onSignup()">Sign Up</button>
+        <button ion-button outline color="white" (click)="goToLogin()">Cancel</button>
+    </div>
+
+</ion-content>
